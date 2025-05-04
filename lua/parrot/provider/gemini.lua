@@ -18,10 +18,13 @@ local AVAILABLE_API_PARAMETERS = {
   system_instruction = true,
   generationConfig = {
     stopSequences = true,
-    temperature = true,
     maxOutputTokens = true,
-    topP = true,
+    temperature = true,
     topK = true,
+    topP = true,
+    thinkingConfig = {
+      thinkingBudget = true,
+    },
   },
 }
 
@@ -151,7 +154,6 @@ function Gemini:get_available_models(online)
   end
   local ids = {
     "gemini-2.5-flash-preview-05-20",
-    "gemini-2.5-flash-preview-04-17",
     "gemini-2.5-pro-preview-05-06",
     "chat-bison-001",
     "text-bison-001",
