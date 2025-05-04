@@ -66,12 +66,36 @@ local defaults = {
       endpoint = "https://generativelanguage.googleapis.com/v1beta/models/",
       topic_prompt = topic_prompt,
       topic = {
-        model = "gemini-1.5-flash",
-        params = { maxOutputTokens = 64 },
+        model = "gemini-2.5-flash-preview-05-20",
+        params = {
+          maxOutputTokens = 8192,
+          temperature = 0,
+          topP = 0.95,
+          topK = 40,
+          thinkingConfig = {
+            thinkingBudget = 0,
+          },
+        },
       },
       params = {
-        chat = { temperature = 1.1, topP = 1, topK = 10, maxOutputTokens = 8192 },
-        command = { temperature = 0.8, topP = 1, topK = 10, maxOutputTokens = 8192 },
+        chat = {
+          maxOutputTokens = 8192,
+          temperature = 0,
+          topP = 0.95,
+          topK = 64,
+          thinkingConfig = {
+            thinkingBudget = 0,
+          },
+        },
+        command = {
+          maxOutputTokens = 8192,
+          temperature = 0,
+          topP = 0.95,
+          topK = 64,
+          thinkingConfig = {
+            thinkingBudget = 0,
+          },
+        },
       },
     },
     ollama = {
